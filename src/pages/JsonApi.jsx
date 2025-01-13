@@ -15,7 +15,6 @@ function JsonApi () {
       .then(response => {
         if (response.status === 200) {
           setComments(response.data)
-          // Total izohlar sonini olish va sahifalar sonini hisoblash
           const totalComments = response.headers['x-total-count']
           setPageCount(Math.ceil(totalComments / 6))
         }
@@ -35,8 +34,8 @@ function JsonApi () {
   }
 
   return (
-    <div className='container flex flex-col mx-auto mt-10 gap-5'>
-      {/* Izohlarni chiqarish */}
+    <div className='max-w-[950px] flex flex-col mx-auto mt-10 gap-5'>
+      
       <div className='flex flex-wrap justify-between gap-3'>
         {comments.length > 0 &&
           comments.map(comment => (
@@ -52,9 +51,9 @@ function JsonApi () {
           ))}
       </div>
 
-      {/* Pagination va Select */}
+      
       <div className='justify-between mt-5'>
-        {/* Select Component */}
+        
         <div>
           <label htmlFor='page-select' className='mr-2 text-lg font-medium'>
             Sahifa tanlang:
@@ -73,7 +72,6 @@ function JsonApi () {
           </select>
         </div>
 
-        {/* Pagination Component */}
         <Pagination
           size='large'
           count={pageCount}
