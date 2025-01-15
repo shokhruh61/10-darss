@@ -8,7 +8,7 @@ function MainLayout ({ children }) {
         <header >
             <div className='flex items-center justify-between'>
                 <Link to="/">JsonApi</Link>
-                <Link to="/scrolPagi">JsonApi</Link>
+                <Link to="/scrolPagi">Scrol Pagination</Link>
             </div>
         </header>
       </div>
